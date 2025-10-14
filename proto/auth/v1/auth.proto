@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option go_package = "github.com/AvdienkoSergey/grpc-contracts/gen/go/auth/v1;authv1";
+
+import "google/protobuf/timestamp.proto";
+
+service AuthService {
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+  string realm = 3;
+  string client_id = 4;
+}
+
+message LoginResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  string id_token = 3;
+  int32 expires_in = 4;
+  int32 refresh_expires_in = 5;
+  string token_type = 6;
+  string session_state = 7;
+  string scope = 8;
+}
+
+message RefreshTokenRequest {
+  string refresh_token = 1;
+  string realm = 2;
+  string client_id = 3;
+}
+
+message RefreshTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  string id_token = 3;
+  int32 expires_in = 4;
+  int32 refresh_expires_in = 5;
+  string token_type = 6;
+}
+
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+message ValidateTokenResponse {
+  bool active = 1;
+  string username = 2;
+  string client_id = 3;
+  repeated string scopes = 4;
+  google.protobuf.Timestamp exp = 5;
+  google.protobuf.Timestamp iat = 6;
+  string sub = 7;
+  string typ = 8;
+}
+
+message LogoutRequest {
+  string refresh_token = 1;
+  string realm = 2;
+  string client_id = 3;
+}
+
+message LogoutResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetUserInfoRequest {
+  string access_token = 1;
+}
+
+message GetUserInfoResponse {
+  string sub = 1;
+  string preferred_username = 2;
+  string name = 3;
+  string given_name = 4;
+  string family_name = 5;
+  string email = 6;
+  bool email_verified = 7;
+  map<string, string> attributes = 8;
+}
