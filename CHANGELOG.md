@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/AvdienkoSergey/grpc-contracts/compare/v1.0.0...v1.1.0) (2025-10-15)
+
+
+### Features
+
+* add cross-platform dependency checks to Makefile ([f5a0a9b](https://github.com/AvdienkoSergey/grpc-contracts/commit/f5a0a9bac38ba8f0d5ae6311d02acd76c2286287))
+
 ## 1.0.0 (2025-10-14)
 
 
