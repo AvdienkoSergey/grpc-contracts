@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.1](https://github.com/AvdienkoSergey/grpc-contracts/compare/v1.2.0...v1.2.1) (2025-10-15)
+
+
+### Bug Fixes
+
+* change release-type to simple for custom changelog sections. Test ([b5dbb03](https://github.com/AvdienkoSergey/grpc-contracts/commit/b5dbb03cb05b983e284efc46deeec984440104cf))
+
+
+### Performance Improvements
+
+* checking for a changelog entry. Test 2 ([81590bc](https://github.com/AvdienkoSergey/grpc-contracts/commit/81590bcf8abdca35f9e54f9d793690e61042704e))
+
+
+### Reverts
+
+* checking for a changelog entry. Test 2 ([6ba695c](https://github.com/AvdienkoSergey/grpc-contracts/commit/6ba695c6ed7c920095c3a61437b16d68342755a7))
+
 ## [1.2.0](https://github.com/AvdienkoSergey/grpc-contracts/compare/v1.1.0...v1.2.0) (2025-10-15)
 
 
